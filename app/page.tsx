@@ -15,7 +15,7 @@ export default function Page() {
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Bienvenidos a 369 G. C.</strong> Este es un ejemplo del curso de{' '}
+            <strong>Bienvenidos a 369</strong> Este es un ejemplo del curso de{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Aprender Curso
             </a>

@@ -16,7 +16,7 @@ export default function Page() {
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
             <strong>Bienvenidos a Acme</strong> Este es un ejemplo del curso de{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-700">
+            <a href="https://nextjs.org/learn/" className="text-blue-400">
               Next.js Dashboard Curses
             </a>
             , traído para tí por Vercel.

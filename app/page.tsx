@@ -15,11 +15,11 @@ export default function Page() {
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Bienvenidos a Acme</strong> Este es un ejemplo del curso de{' '}
+            <strong>Bienvenidos a Atlas</strong> Este es un ejemplo de facturador del curso de{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-400">
-              Next.js Dashboard Curses
+              Next.js
             </a>
-            , traído para tí por Vercel.
+            , por Vercel.
           </p>
           <Link
             href="/login"
@@ -31,17 +31,17 @@ export default function Page() {
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
           <Image
-            src="/hero-desktop.png"
+            src="/desktop-hero.png"
             width={1000}
             height={760}
-            className="hidden md:block"
+            className="hidden md:block drop"
             alt="Screenshot of the dashboard project showing desktop version"
           />
           <Image
             src="/hero-mobile.png"
             width={560}
             height={620}
-            className="block md:hidden"
+            className="block md:hidden drop"
             alt="Screenshot of the dashboard project showing mobile version"
           />
         </div>

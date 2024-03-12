@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-zinc-800 p-4 md:h-52">
         <AcmeLogo />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
@@ -16,14 +16,14 @@ export default function Page() {
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
             <strong>Bienvenidos a Acme</strong> Este es un ejemplo del curso de{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Aprender Curso
+            <a href="https://nextjs.org/learn/" className="text-blue-700">
+              Next.js Dashboard Curses
             </a>
             , traído para tí por Vercel.
           </p>
           <Link
             href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-zinc-800 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 md:text-base"
           >
             <span>Ingresar</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>

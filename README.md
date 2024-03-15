@@ -131,7 +131,7 @@ npx create-next-app@latest nextjs-dashboard --use-npm --example "https://github.
 
 Este comando utiliza `create-next-app`, una herramienta de línea de comandos (CLI) que configura una aplicación Next.js para ti. En el comando anterior, también estás utilizando la bandera `--example` con el ejemplo inicial para este curso.
 
-### After installation, open the project in your code editor and navigate to nextjs-dashboard.
+### Después de la instalación, abre el proyecto en tu editor de código y navega hasta nextjs-dashboard.
 
 Terminal
 

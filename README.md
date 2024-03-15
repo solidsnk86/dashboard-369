@@ -102,6 +102,21 @@ Before you start this course, make sure your system meets the following requirem
 2. Operating systems: macOS, Windows (including WSL), or Linux.
 3. In addition, you'll also need a GitHub Account and a Vercel Account.
 
+### Generación de una Clave Secreta para tu Aplicación
+
+Para garantizar la seguridad de las sesiones de usuario y encriptar las cookies, es necesario generar una clave secreta para tu aplicación. Puedes hacerlo ejecutando el siguiente comando en tu terminal:
+
+```bash
+openssl rand -base64 32
+```
+
+Este comando generará una clave secreta aleatoria con una longitud de 32 bytes, codificada en base64. Puedes copiar y pegar la clave generada en tu archivo de configuración de entorno (por ejemplo, .env) como el valor de la variable de entorno `AUTH_SECRET`.
+
+Recuerda mantener esta clave secreta segura y no compartirla públicamente para garantizar la seguridad de tu aplicación.
+
+>[!Important]
+>Para tener en cuenta quienes usan sistemas operativos Windows es necesario instalar Perl para poder configurar `openssl`
+
 ### Creación de un nuevo proyecto
 
 Para crear una aplicación Next.js, abre tu terminal, navega hacia la carpeta donde deseas guardar tu proyecto y ejecuta el siguiente comando:

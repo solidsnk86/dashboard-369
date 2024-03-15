@@ -41,11 +41,13 @@ yarn add zod
 1. **Importa Zod:**
    En los archivos donde deseas realizar la validación de tipos, importa Zod al principio del archivo:
 
-typescript
-Copy code
+```typescript
 import { z } from 'zod';
-Define un Esquema:
-Define un esquema que coincida con la forma de tus datos. Por ejemplo, para un formulario con campos de nombre y edad:
+```
+
+**Define un Esquema:**
+
+Define un esquema que coincida con la forma de tus `datos`. Por ejemplo, para un formulario con campos de nombre y edad:
 
 ```typescript
 const userSchema = z.object({
@@ -94,13 +96,13 @@ try {
 
 Con este curso, estarás equipado para construir tu propia aplicación de gestión de facturas con Next.js, integrando una base de datos SQL y visualizando datos mediante gráficos interactivos.
 
-### System requirements
+### Requerimientos del sistema
 
-Before you start this course, make sure your system meets the following requirements:
+Antes de comenzar este curso, asegúrate de que tu sistema cumpla con los siguientes requisitos.:
 
-1. Node.js 18.17.0 or later installed. Download here.
-2. Operating systems: macOS, Windows (including WSL), or Linux.
-3. In addition, you'll also need a GitHub Account and a Vercel Account.
+1. Node.js 18.17.0 o posterior instalado. Descárgalo aquí.
+2. Sistemas operativos: macOS, Windows (incluyendo WSL) o Linux.
+3. Además, también necesitarás una cuenta de GitHub y una cuenta de Vercel.
 
 ### Generación de una Clave Secreta para tu Aplicación
 

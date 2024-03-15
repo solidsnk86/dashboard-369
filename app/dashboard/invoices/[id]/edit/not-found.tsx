@@ -9,7 +9,7 @@ export default function NotFound() {
             <p>No ha sido posible encontrar la factura solicitada.</p>
             <Link
                 href="/dashboard/invoices"
-                className="mt-4 rounded-md bg-zinc-700 px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-600"
+                className="mt-4 rounded-md bg-zinc-800 px-4 py-2 text-sm text-white transition-colors hover:bg-zinc-700"
             >
                 Volver
             </Link>

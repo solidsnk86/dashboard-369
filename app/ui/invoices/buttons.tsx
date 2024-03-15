@@ -20,7 +20,7 @@ export function UpdateInvoice({ id }: { id: string }) {
       href={`/dashboard/invoices/${id}/edit`}
       className="rounded-md border p-2 hover:bg-gray-100"
     >
-      <PencilIcon className="w-5" />
+      <PencilIcon className="w-4" />
     </Link>
   );
 }
@@ -31,7 +31,7 @@ export function DeleteInvoice({ id }: { id: string }) {
   return (
     <form action={deleteInvoiceWithId}>
       <button className="rounded-md border p-2 hover:bg-gray-100">
-        <span className="sr-only">Delete</span>
+        <span className="sr-only">Borrar</span>
         <TrashIcon className="w-4" />
       </button>
     </form>

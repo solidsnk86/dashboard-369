@@ -114,8 +114,8 @@ Este comando generará una clave secreta aleatoria con una longitud de 32 bytes,
 
 Recuerda mantener esta clave secreta segura y no compartirla públicamente para garantizar la seguridad de tu aplicación.
 
->[!Important]
->Para tener en cuenta quienes usan sistemas operativos Windows es necesario instalar Perl para poder configurar `openssl`
+> [!Important]
+> Para tener en cuenta quienes usan sistemas operativos Windows es necesario instalar Perl para poder configurar `openssl`
 
 ### Creación de un nuevo proyecto
 
@@ -137,4 +137,9 @@ Terminal
 cd nextjs-dashboard
 ```
 
-Let's spend some time exploring the project and study how it works.
+Vamos a gastar algo de tiempo estudiando el código e interpretandolo.
+
+**Para probar el acceso para la aplicación:**
+
+<p>email: user@nextmail.com</p>
+<p>contraseña: 123456</p>

@@ -23,13 +23,67 @@ En este curso avanzado de Next.js, aprenderás a desarrollar una aplicación web
 
    - Configuración de una base de datos SQL para almacenar información de clientes y facturas.
    - Conexión y consulta de la base de datos desde Next.js.
+   - Validación de Tipos con Zod
 
-5. **Visualización de Datos con Gráficos:**
+Para garantizar que los datos de tu aplicación cumplan con ciertos criterios antes de ser utilizados, puedes utilizar Zod, una biblioteca de validación de tipos desarrollada específicamente para TypeScript.
+
+Instalación
+Para comenzar a utilizar Zod en tu proyecto, primero necesitas instalarlo. Puedes hacerlo a través de npm o yarn ejecutando el siguiente comando en tu terminal:
+
+```bash
+npm install zod
+# O
+yarn add zod
+```
+
+**Uso Básico**
+
+1. **Importa Zod:**
+   En los archivos donde deseas realizar la validación de tipos, importa Zod al principio del archivo:
+
+typescript
+Copy code
+import { z } from 'zod';
+Define un Esquema:
+Define un esquema que coincida con la forma de tus datos. Por ejemplo, para un formulario con campos de nombre y edad:
+
+```typescript
+const userSchema = z.object({
+  name: z.string(),
+  age: z.number().positive(),
+});
+```
+
+2. **Valida los Datos:**
+   Utiliza el esquema definido para validar los datos antes de utilizarlos en tu aplicación:
+
+```typescript
+const userData = {
+  name: 'John',
+  age: 30,
+};
+
+try {
+  const validatedData = userSchema.parse(userData);
+  console.log('Datos válidos:', validatedData);
+} catch (error) {
+  console.error('Error de validación:', error);
+}
+```
+
+3. **Ventajas de Zod**
+
+- Tipado Seguro: Zod proporciona tipos seguros para tus datos, lo que significa que obtienes un objeto tipado después de la validación.
+  Sintaxis Declarativa: La sintaxis de Zod es similar a TypeScript, lo que la hace fácil de entender y utilizar.
+  Manejo de Errores: Zod maneja automáticamente los errores de validación, lo que simplifica el manejo de casos de error en tu aplicación.
+  Con Zod, puedes asegurarte de que tus datos cumplan con las reglas definidas en tus esquemas de validación, lo que ayuda a evitar errores y garantiza la integridad de tus datos en tu aplicación.
+
+2. **Visualización de Datos con Gráficos:**
 
    - Implementación de gráficos interactivos para visualizar datos de facturación.
    - Uso de bibliotecas populares como Chart.js o D3.js para crear gráficos dinámicos.
 
-6. **Despliegue en Vercel:**
+3. **Despliegue en Vercel:**
    - Configuración del despliegue automático en Vercel para la aplicación completa.
    - Optimización de la aplicación para producción y pruebas de rendimiento.
 

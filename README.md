@@ -1,4 +1,6 @@
-## Curso de Next.js: Creando una Aplicación de Gestión de Facturas con Base de Datos SQL en Vercel
+## Curso de Next.js: 
+
+Creando una Aplicación de Gestión de Facturas con Base de Datos SQL en Vercel
 
 En este curso avanzado de Next.js, aprenderás a desarrollar una aplicación web completa para la gestión de facturas, incluyendo características como seguimiento de facturas enviadas, pagadas y pendientes, así como visualización de datos mediante gráficos. Todo el frontend estará desarrollado con TypeScript y se implementa un script `seed.js` en `Javascipt con SQL para crear las tablas y sembrar los datos de nuestra aplicación` para una mayor seguridad y productividad.
 

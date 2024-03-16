@@ -9,91 +9,66 @@ const users = [
   },
 ];
 
-const randomizeUsers = (maxUsers) => {
-  const randomNumber = Math.floor(Math.random() * maxUsers);
-  return randomNumber;
-};
-
 const customers = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
-    name: 'Chuck Fishman',
-    email: 'chuck@fishman.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    name: 'Delba de Oliveira',
+    email: 'delba@oliveira.com',
+    image_url: '/customers/delba-de-oliveira.png',
   },
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
-    name: 'Aman Brhane',
-    email: 'aman@brhane.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    name: 'Lee Robinson',
+    email: 'lee@robinson.com',
+    image_url: '/customers/lee-robinson.png',
   },
   {
     id: '3958dc9e-737f-4377-85e9-fec4b6a6442a',
     name: 'Hector Simpson',
     email: 'hector@simpson.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    image_url: '/customers/hector-simpson.png',
   },
   {
-    id: '3958dc9e-748f-4377-85e9-fec4b6a6442a',
-    name: 'Lena Patel',
-    email: 'lena@patel.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: '50ca3e18-62cd-11ee-8c99-0242ac120002',
+    name: 'Steven Tey',
+    email: 'steven@tey.com',
+    image_url: '/customers/steven-tey.png',
   },
   {
-    id: '3958dc9e-759f-4377-85e9-fec4b6a6442a',
-    name: 'Devon Knight',
-    email: 'devon@knight.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: '3958dc9e-787f-4377-85e9-fec4b6a6442a',
+    name: 'Steph Dietz',
+    email: 'steph@dietz.com',
+    image_url: '/customers/steph-dietz.png',
   },
   {
-    id: '3958dc9e-760f-4377-85e9-fec4b6a6442a',
-    name: 'Ella Wong',
-    email: 'ella@wong.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
+    name: 'Michael Novotny',
+    email: 'michael@novotny.com',
+    image_url: '/customers/michael-novotny.png',
   },
   {
-    id: '3958dc9e-770f-4377-85e9-fec4b6a6442a',
-    name: 'Gavin Douglas',
-    email: 'gavin@douglas.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
+    name: 'Evil Rabbit',
+    email: 'evil@rabbit.com',
+    image_url: '/customers/evil-rabbit.png',
   },
   {
-    id: '3958dc9e-780f-4377-85e9-fec4b6a6442a',
-    name: 'Mia Reynolds',
-    email: 'mia@reynolds.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: '126eed9c-c90c-4ef6-a4a8-fcf7408d3c66',
+    name: 'Emil Kowalski',
+    email: 'emil@kowalski.com',
+    image_url: '/customers/emil-kowalski.png',
   },
   {
-    id: '3958dc9e-790f-4377-85e9-fec4b6a6442a',
-    name: 'Oscar Rodriguez',
-    email: 'oscar@rodriguez.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: 'CC27C14A-0ACF-4F4A-A6C9-D45682C144B9',
+    name: 'Amy Burns',
+    email: 'amy@burns.com',
+    image_url: '/customers/amy-burns.png',
   },
   {
-    id: '3958dc9e-800f-4377-85e9-fec4b6a6442a',
-    name: 'Sophie Taylor',
-    email: 'sophie@taylor.com',
-    image_url: `https://avatars.githubusercontent.com/u/${randomizeUsers(
-      93176365,
-    )}?v=4`,
+    id: '13D07535-C59E-4157-A011-F8D2EF4E0CBB',
+    name: 'Balazs Orban',
+    email: 'balazs@orban.com',
+    image_url: '/customers/balazs-orban.png',
   },
 ];
 

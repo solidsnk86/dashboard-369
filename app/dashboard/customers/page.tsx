@@ -12,7 +12,7 @@ export default async function Page() {
             <header className="flex w-full items-center justify-between">
                 <h1 className={`${lusitana.className} text-2xl`}>Clientes</h1>
             </header>
-            <div className="mt-6 flow-root">
+            <div className="mt-6 flow-root overflow-hidden overflow-x-auto">
                 <div className="inline-block min-w-full align-middle">
                     <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
                         <div className="md:hidden">
@@ -42,85 +42,88 @@ export default async function Page() {
                                 </div>
                             ))}
                         </div>
-                        <table className="hidden min-w-full text-gray-900 md:table">
-                            <thead className="rounded-lg text-left text-sm font-normal">
-                                <tr>
-                                    <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                                        Cliente
-                                    </th>
-                                    <th scope="col" className="px-3 py-5 font-medium">
-                                        Email
-                                    </th>
-                                    <th scope="col" className="px-3 py-5 font-medium">
-                                        Saldo
-                                    </th>
-                                    <th scope="col" className="px-3 py-5 font-medium">
-                                        Pagado
-                                    </th>
-                                    <th scope="col" className="px-3 py-5 font-medium">
-                                        Estado
-                                    </th>
-                                    <th scope="col" className="relative py-3 pl-6 pr-3">
-                                        <span className="sr-only">Editar</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className="bg-white">
-                                {customersData.map((customer) => (
-                                    <tr
-                                        key={customer.id}
-                                        className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
-                                    >
-                                        <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                                            <div className="flex items-center gap-3">
-                                                <Image
-                                                    src={customer.image_url}
-                                                    className="rounded-full"
-                                                    width={28}
-                                                    height={28}
-                                                    alt={`${customer.name}'s profile picture`}
-                                                />
-                                                <p>{customer.name}</p>
-                                            </div>
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-3">
-                                            {customer.email}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-3 bg-red-400/70">
-                                            {customer.total_pending === '$0.00' ? null : (
-                                                <span className="flex text-xs text-gray-800">
-                                                    {customer.total_pending}
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-3 bg-green-400/70">
-                                            {customer.total_paid === '$0.00' ? null : (
-                                                <span className="flex text-xs text-gray-800">
-                                                    {customer.total_paid}
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="whitespace-nowrap px-3 py-3">
-                                            {customer.total_pending === '$0.00' ? null : (
-                                                <Link
-                                                    className="mx-1 text-sm text-blue-400"
-                                                    title={`Enviar saldo por correo a ${customer.name}`}
-                                                    href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma, atentamente! Atlas.\n\n`}
-                                                >
-                                                    Enviar
-                                                </Link>
-                                            )}
-                                        </td>
-                                        <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                                            <div className="flex justify-end gap-3"></div>
-                                        </td>
+                        <div className="md:block"> {/* Muestra en pantallas medianas y grandes */}
+                            <table className="min-w-full text-gray-900">
+                                <thead className="rounded-lg text-left text-sm font-normal">
+                                    <tr>
+                                        <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
+                                            Cliente
+                                        </th>
+                                        <th scope="col" className="px-3 py-5 font-medium">
+                                            Email
+                                        </th>
+                                        <th scope="col" className="px-3 py-5 font-medium">
+                                            Saldo
+                                        </th>
+                                        <th scope="col" className="px-3 py-5 font-medium">
+                                            Pagado
+                                        </th>
+                                        <th scope="col" className="px-3 py-5 font-medium">
+                                            Estado
+                                        </th>
+                                        <th scope="col" className="relative py-3 pl-6 pr-3">
+                                            <span className="sr-only">Editar</span>
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className="bg-white">
+                                    {customersData.map((customer) => (
+                                        <tr
+                                            key={customer.id}
+                                            className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
+                                        >
+                                            <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                                <div className="flex items-center gap-3">
+                                                    <Image
+                                                        src={customer.image_url}
+                                                        className="rounded-full"
+                                                        width={28}
+                                                        height={28}
+                                                        alt={`${customer.name}'s profile picture`}
+                                                    />
+                                                    <p>{customer.name}</p>
+                                                </div>
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-3">
+                                                {customer.email}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-3 bg-red-400/70">
+                                                {customer.total_pending === '$0.00' ? null : (
+                                                    <span className="flex text-xs text-gray-800">
+                                                        {customer.total_pending}
+                                                    </span>
+                                                )}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-3 bg-green-400/70">
+                                                {customer.total_paid === '$0.00' ? null : (
+                                                    <span className="flex text-xs text-gray-800">
+                                                        {customer.total_paid}
+                                                    </span>
+                                                )}
+                                            </td>
+                                            <td className="whitespace-nowrap px-3 py-3">
+                                                {customer.total_pending === '$0.00' ? null : (
+                                                    <Link
+                                                        className="mx-1 text-sm text-blue-400"
+                                                        title={`Enviar saldo por correo a ${customer.name}`}
+                                                        href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma, atentamente! Atlas.\n\n`}
+                                                    >
+                                                        Enviar
+                                                    </Link>
+                                                )}
+                                            </td>
+                                            <td className="whitespace-nowrap py-3 pl-6 pr-3">
+                                                <div className="flex justify-end gap-3"></div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </>
     );
 }

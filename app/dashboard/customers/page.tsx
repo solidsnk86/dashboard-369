@@ -1,4 +1,3 @@
-import AcmeLogo from '@/app/ui/acme-logo';
 import { fetchFilteredCustomers } from '@/app/lib/data';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
@@ -58,11 +57,9 @@ export default async function Page() {
                                             Pagado
                                         </th>
                                         <th scope="col" className="px-3 py-5 font-medium">
-                                            Estado
+                                            Aviso
                                         </th>
-                                        <th scope="col" className="relative py-3 pl-6 pr-3">
-                                            <span className="sr-only">Editar</span>
-                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white">

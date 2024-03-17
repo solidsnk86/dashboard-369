@@ -1,4 +1,4 @@
-## Curso de Next.js: 
+## Curso de Next.js:
 
 Creando una Aplicación de Gestión de Facturas con Base de Datos SQL en Vercel
 
@@ -143,7 +143,9 @@ cd nextjs-dashboard
 
 Vamos a gastar algo de tiempo estudiando el código e interpretandolo.
 
-**Para probar el acceso para la aplicación:**
+### Credenciales para inicio de sesión
+
+**Para probar el acceso en la aplicación:**
 
 <p>email: user@nextmail.com</p>
 <p>contraseña: 123456</p>

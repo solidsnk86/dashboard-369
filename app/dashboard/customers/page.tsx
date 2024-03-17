@@ -50,9 +50,6 @@ export default async function Page() {
                                             Cliente
                                         </th>
                                         <th scope="col" className="px-3 py-5 font-medium">
-                                            Email
-                                        </th>
-                                        <th scope="col" className="px-3 py-5 font-medium">
                                             Saldo
                                         </th>
                                         <th scope="col" className="px-3 py-5 font-medium">
@@ -84,9 +81,7 @@ export default async function Page() {
                                                     <p>{customer.name}</p>
                                                 </div>
                                             </td>
-                                            <td className="whitespace-nowrap px-3 py-3">
-                                                {customer.email}
-                                            </td>
+
                                             <td className="whitespace-nowrap px-3 py-3 bg-red-400/70">
                                                 {customer.total_pending === '$0.00' ? null : (
                                                     <span className="flex text-xs text-gray-800">
@@ -104,12 +99,12 @@ export default async function Page() {
                                             <td className="whitespace-nowrap px-3 py-3">
                                                 {customer.total_pending === '$0.00' ? null : (
                                                     <Link
-                                                        className="mx-1 text-sm text-blue-400"
-                                                        title={`Enviar saldo por correo a ${customer.name}`}
-                                                        href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma, atentamente! Atlas.\n\n`}
-                                                    >
-                                                        Enviar
-                                                    </Link>
+                                                    className="mx-1 text-sm text-blue-400"
+                                                    title={`Enviar saldo por correo a ${customer.name}`}
+                                                    href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma, atentamente! Atlas.`}
+                                                >
+                                                    Enviar Saldo
+                                                </Link>
                                                 )}
                                             </td>
                                             <td className="whitespace-nowrap py-3 pl-6 pr-3">

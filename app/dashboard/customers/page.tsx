@@ -15,7 +15,7 @@ export default async function Page() {
             <section className="mt-4 rounded-md bg-gray-50 p-2">
                 <article className="space-x-1 ">
                     {customersData.map((customer) => (
-                        <div className="border-b p-2">
+                        <div className="border-b p-2" key={customer.id}>
                             <div className="mt-3 flex">
                                 <Image
                                     src={customer.image_url}

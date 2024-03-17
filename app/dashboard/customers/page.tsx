@@ -13,10 +13,10 @@ export default async function Page() {
                 <h1 className={`${lusitana.className} text-2xl`}>Clientes</h1>
             </header>
             <section className="mt-4 rounded-md bg-gray-50 p-2">
-                <article className="space-x-1 ">
+                <article className="truncate">
                     {customersData.map((customer) => (
-                        <div className="border-b p-2" key={customer.id}>
-                            <div className="mt-3 flex">
+                        <div className="bg-[#FFFFFF] space-y-2 rounded-md my-2 p-2" key={customer.id}>
+                            <div className="mt-1 flex">
                                 <Image
                                     src={customer.image_url}
                                     alt={`Foto de usuario de ${customer.name}`}

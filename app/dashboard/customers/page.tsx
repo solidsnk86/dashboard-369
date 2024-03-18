@@ -100,7 +100,7 @@ export default async function Page() {
                                                     <Link
                                                         className="mx-1 text-sm text-blue-400"
                                                         title={`Enviar saldo por correo a ${customer.name}`}
-                                                        href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma lo antes posible.\nAtentamente Atlas.`}
+                                                        href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma lo antes posible. \n\nAtentamente Atlas.`}
                                                     >
                                                         Enviar Saldo
                                                     </Link>

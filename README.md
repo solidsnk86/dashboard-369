@@ -10,8 +10,9 @@ En este curso avanzado de Next.js, aprenderás a desarrollar una aplicación web
 
 **Para probar el acceso en la aplicación:**
 
-<p><b style="color: #C9833F">Email</b>: <span style="color: #93C36C">user@nextmail.com</span></p>
-<p><b style="color: #C9833F">Contraseña</b>: <span style="color: #93C36C">123456</span></p>
+![Static Badge](https://img.shields.io/badge/Email:-user@nextmail.com-red)
+
+![Static Badge](https://img.shields.io/badge/Contraseña:-123456-red)
 
 ## Temas cubiertos en este curso:
 

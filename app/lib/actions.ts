@@ -7,38 +7,53 @@ import { redirect } from 'next/navigation';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 
+export interface CustomerResult {
+  errors?: {
+    name?: string[];
+    email?: string[];
+    urlImage?: string[];
+  };
+  message?: string | null;
+}
+
 const CustomerSchema = z.object({
   name: z.string().nonempty(),
   email: z.string().email(),
   urlImage: z.string().optional(),
 });
 
-export interface CustomerResult {
-  errors?: {
-    [key: string]: string[];
-  };
-  message?: string;
-}
+export async function createCustomer(
+  prevState: CustomerResult,
+  formData: FormData,
+): Promise<CustomerResult> {
+  const validatedFields = CustomerSchema.safeParse({
+    name: formData.get('name') as string,
+    email: formData.get('email') as string,
+    urlImage: formData.get('url_image') as string,
+  });
 
-export async function createCustomer(formData: FormData): Promise<CustomerResult> {
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Campos perdidos. Fallo al crear el cliente.',
+    };
+  }
+
+  const { name, email, urlImage } = validatedFields.data;
+
   try {
-    const validatedFields = CustomerSchema.parse({
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      urlImage: formData.get('url_image') as string,
-    });
-
     await sql`
       INSERT INTO customers (name, email, url_image)
-      VALUES (${validatedFields.name}, ${validatedFields.email}, ${validatedFields.urlImage})
+      VALUES (${name}, ${email}, ${urlImage})
     `;
-
-    revalidatePath('/dashboard/customers');
-    redirect('/dashboard/customers');
-
   } catch (error) {
-    return { message: 'Error al crear el cliente'};
+    return {
+      message: 'Error en la base de Datos: Fallos al crear el cliente.',
+    };
   }
+
+  revalidatePath('/dashboard/customers');
+  redirect('/dashboard/customers');
 }
 
 const FormSchema = z.object({

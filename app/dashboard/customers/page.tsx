@@ -77,18 +77,18 @@ export default async function Page() {
                                                         height={28}
                                                         alt={`${customer.name}'s profile picture`}
                                                     />
-                                                    <p className=' truncate'>{customer.name}</p>
+                                                    <p className='truncate'>{customer.name}</p>
                                                 </div>
                                             </td>
 
-                                            <td className="whitespace-nowrap bg-red-400/70 px-3 py-3">
+                                            <td className="whitespace-nowrap px-3 py-3">
                                                 {customer.total_pending === '$0.00' ? null : (
                                                     <span className="flex text-xs text-gray-800">
                                                         {customer.total_pending}
                                                     </span>
                                                 )}
                                             </td>
-                                            <td className="whitespace-nowrap bg-green-400/70 px-3 py-3">
+                                            <td className="whitespace-nowrap px-3 py-3">
                                                 {customer.total_paid === '$0.00' ? null : (
                                                     <span className="flex text-xs text-gray-800">
                                                         {customer.total_paid}

@@ -10,6 +10,7 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
+import { data } from 'autoprefixer';
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
@@ -192,6 +193,20 @@ export async function fetchCustomers() {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all customers.');
+  }
+}
+
+export async function fetchCustomerClient() {
+  try {
+    const data = await sql`
+    SELECT id, name, email FROM customers ORDER BY name ASC
+    `;
+
+    const customers = data.rows;
+    return customers;
+  } catch (err) {
+    console.error('Database Error', err);
+    throw new Error('Fallo al parsear los clientes.');
   }
 }
 

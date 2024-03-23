@@ -6,9 +6,8 @@ import {
     UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { useFormState } from 'react-dom';
-import { CreateCustomerField } from "@/app/lib/definitions";
 
-export default function CustomerForm({ customers }: { customers: CreateCustomerField[] }) {
+export default function CustomerForm() {
     const initialState = { message: null, errors: {} };
     const [state, dispatch] = useFormState(createCustomer, initialState);
 

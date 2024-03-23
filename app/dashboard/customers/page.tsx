@@ -2,6 +2,7 @@ import { fetchFilteredCustomers } from '@/app/lib/data';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 
 export default async function Page() {
     const customersData = await fetchFilteredCustomers('');
@@ -98,11 +99,12 @@ export default async function Page() {
                                             <td className="whitespace-nowrap px-3 py-3">
                                                 {customer.total_pending === '$0.00' ? null : (
                                                     <Link
-                                                        className="mx-1 text-sm text-blue-400"
+                                                        className="mx-1 text-sm text-zinc-100 px-2 py-1 bg-blue-400 rounded-full"
                                                         title={`Enviar saldo por correo a ${customer.name}`}
                                                         href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma lo antes posible. \n\nAtentamente Atlas.`}
                                                     >
                                                         Enviar Saldo
+                                                        <PaperAirplaneIcon className='w-4 h-5 inline mx-1 mb-[2px]' />
                                                     </Link>
                                                 )}
                                             </td>

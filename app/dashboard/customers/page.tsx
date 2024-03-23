@@ -43,8 +43,6 @@ export default async function Page() {
                             ))}
                         </div>
                         <div className="md:block">
-                            {' '}
-                            {/* Muestra en pantallas medianas y grandes */}
                             <table className="min-w-full text-gray-900">
                                 <thead className="rounded-lg text-left text-sm font-normal">
                                     <tr>
@@ -99,7 +97,7 @@ export default async function Page() {
                                             <td className="whitespace-nowrap px-3 py-3">
                                                 {customer.total_pending === '$0.00' ? null : (
                                                     <Link
-                                                        className="mx-1 text-sm text-zinc-100 px-2 py-1 bg-blue-400 rounded-full"
+                                                        className="mx-1 text-sm text-sky-300 px-2 py-1 bg-zinc-800 rounded-full"
                                                         title={`Enviar saldo por correo a ${customer.name}`}
                                                         href={`mailto:${customer.email}?subject=Factura pendiente&body=Hola ${customer.name}, se comunica por la presente que usted adeuda una factura de ${customer.total_pending}. Se agradece la cancelación de la misma lo antes posible. \n\nAtentamente Atlas.`}
                                                     >

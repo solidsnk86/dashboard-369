@@ -7,6 +7,40 @@ import { redirect } from 'next/navigation';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 
+const CustomerSchema = z.object({
+  name: z.string().nonempty(),
+  email: z.string().email(),
+  urlImage: z.string().optional(),
+});
+
+export interface CustomerResult {
+  errors?: {
+    [key: string]: string[];
+  };
+  message?: string;
+}
+
+export async function createCustomer(formData: FormData): Promise<CustomerResult> {
+  try {
+    const validatedFields = CustomerSchema.parse({
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      urlImage: formData.get('url_image') as string,
+    });
+
+    await sql`
+      INSERT INTO customers (name, email, url_image)
+      VALUES (${validatedFields.name}, ${validatedFields.email}, ${validatedFields.urlImage})
+    `;
+
+    revalidatePath('/dashboard/customers');
+    redirect('/dashboard/customers');
+
+  } catch (error) {
+    return { message: 'Error al crear el cliente'};
+  }
+}
+
 const FormSchema = z.object({
   id: z.string(),
   customerId: z.string({

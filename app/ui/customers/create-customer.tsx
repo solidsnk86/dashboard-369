@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useFormState } from 'react-dom';
 
-export default function CustomerForm({ customers } : { customers: CustomerResult[] }) {
+export default function CustomerForm({ customers }: { customers: CustomerResult[] }) {
     const initialState = { message: null, errors: {} };
     const [state, dispatch] = useFormState(createCustomer, initialState);
 
@@ -24,7 +24,7 @@ export default function CustomerForm({ customers } : { customers: CustomerResult
                         <input
                             id="name"
                             name="name"
-                            className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                            className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
                             placeholder="Ingrese el nombre"
                             aria-describedby="customer-error"
                         />

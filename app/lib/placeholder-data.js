@@ -5,7 +5,16 @@ const users = [
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
     name: 'User',
     email: 'atlas@atlas.com',
-    password: 'admin123',
+    password: 'admin1234',
+  },
+];
+
+const mainUser = [
+  {
+    id: '410544b2-4001-4271-9855-fec4b6a6442a',
+    name: 'User',
+    email: 'atlas@atlas.com',
+    password: 'admin1234',
   },
 ];
 
@@ -182,6 +191,7 @@ const revenue = [
 
 module.exports = {
   users,
+  mainUser,
   customers,
   invoices,
   revenue,

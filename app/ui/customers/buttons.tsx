@@ -1,3 +1,5 @@
+'use client'
+
 import { PlusIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 
@@ -9,13 +11,5 @@ export function CreateCustomer() {
             <span>Crear Cliente</span>{' '}
             <PlusIcon className='h-5 md:ml-4' />
         </Link>
-    )
-}
-
-export function DeleteCustomer() {
-    return (
-        <form>
-
-        </form>
     )
 }

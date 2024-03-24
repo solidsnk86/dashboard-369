@@ -17,19 +17,23 @@ export interface CustomerResult {
 }
 
 const CustomerSchema = z.object({
-  name: z.string().nonempty(),
-  email: z.string().email(),
+  name: z.string({
+    invalid_type_error: 'Proporcione un nombre y apellido',
+  }),
+  email: z.string({
+    invalid_type_error: 'Debe proporcionar un correo electrónico válido',
+  }),
   urlImage: z.string().optional(),
 });
 
 export async function createCustomer(
   prevState: CustomerResult,
   formData: FormData,
-): Promise<CustomerResult> {
+) {
   const validatedFields = CustomerSchema.safeParse({
-    name: formData.get('name') as string,
-    email: formData.get('email') as string,
-    urlImage: formData.get('url_image') as string,
+    name: formData.get('name'),
+    email: formData.get('email'),
+    urlImage: formData.get('url_image'),
   });
 
   if (!validatedFields.success) {
@@ -167,6 +171,16 @@ export async function deleteInvoice(id: string) {
   } catch (error) {
     return {
       message: 'Error en la base de Datos: Fallo al borrar la factura.',
+    };
+  }
+}
+
+export async function deleteCustomer(id: string) {
+  try {
+    await sql`DELETE FROM invoices WHERE id = {id}`;
+  } catch (error) {
+    return {
+      message: 'Error en la base de Datos: No se pudo eliminar el cliente.',
     };
   }
 }

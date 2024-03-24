@@ -1,3 +1,5 @@
+'use client'
+
 import CustomerForm from '@/app/ui/customers/create-customer';
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchCustomerClient } from '@/app/lib/data';

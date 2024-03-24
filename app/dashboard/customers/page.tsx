@@ -6,7 +6,15 @@ import { Mails } from 'lucide-react';
 import Search from '@/app/ui/search';
 import { CreateCustomer } from '@/app/ui/customers/buttons';
 
-export default async function Page() {
+export default async function Page({ searchParams, }: {
+    searchParams?: {
+        query?: string,
+        page?: string
+    };
+}) {
+    const query = searchParams?.query || '';
+    const currentPage = Number(searchParams?.page || 1)
+
     const customersData = await fetchFilteredCustomers('');
 
     return (

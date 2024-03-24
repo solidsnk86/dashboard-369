@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from '@/app/ui/button';
-import { createCustomer } from '@/app/lib/actions';
+import { createCustomer, type CustomerResult } from '@/app/lib/actions';
 import {
     AtSymbolIcon,
     PhotoIcon,
@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useFormState } from 'react-dom';
 
-export default function CustomerForm() {
+export default function CustomerForm({ customers } : { customers: CustomerResult[] }) {
     const initialState = { message: null, errors: {} };
     const [state, dispatch] = useFormState(createCustomer, initialState);
 

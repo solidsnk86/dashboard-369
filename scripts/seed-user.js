@@ -15,7 +15,7 @@ async function seedUser(client) {
       }),
     );
 
-    console.log(`Sembrado ${insertedUser.length} usuarios`);
+    console.log(`Insertado ${insertedUser.length} usuarios`);
 
     return {
       users: insertedUser,
@@ -35,5 +35,5 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error('Error al sembrar los datos en el servidor', error);
+  console.error('Error al insertar los datos en el servidor', error);
 });
